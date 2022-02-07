@@ -1,0 +1,235 @@
+html,body,*{
+    margin: 0;
+    padding: 0;
+}
+html,body{
+    width: 100%;
+    height: 100vh;
+    font-family:  Helvetica, Arial,sans-serif;
+    font-size: 14;
+    font-weight: 200;
+    overflow: hidden;
+}
+.container{
+    max-width: 1200px;
+    margin: auto;
+    height: 100%;
+}
+nav{
+    width: 100%;
+    display: flex;
+    padding: 24px;
+    align-items: center;
+    gap: 120px;
+
+}
+nav>:nth-child(1){
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+nav>:nth-child(2){
+   
+    width: 55%;
+    
+}
+nav>:nth-child(2)>ul{
+    list-style: none;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+     gap: 30px;
+     letter-spacing: 1px;
+}
+
+nav>:nth-child(3){
+    display: flex;
+    gap: 15px;
+}
+.button{
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+main{
+    height: 70vh;
+    margin-top: 25px;
+}
+.grow-container{
+    display: grid;
+    grid-template: repeat(1,1fr)/repeat(12,1fr);
+}
+.left{
+    grid-column: 1/5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.rigth{
+    width: 100%;
+    grid-column: 5/13;
+    flex-grow: 1;
+    display: flex;
+    gap: 30px;
+    /* justify-content: flex-end; */
+}
+.item{
+    width: 33%;
+    background-position:center top;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    height: 600px;
+    border-radius: 2rem;
+    transition: width 0.2s ease-in;
+    position: relative;
+    overflow: hidden;
+}
+.item::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    background: linear-gradient(0deg, rgba(0,0,0,0.587272) 0%,rgba(0,0,0,0) 30%);
+}
+.bloc{
+    width: 10%;
+}
+.item:first-child{
+    width: 190%;
+}
+.item:hover{
+    width: 90%;
+}
+.left-content{
+   
+}
+.left-content> h1{
+    font-size: 4rem;
+}
+.search{
+    position: absolute;
+    left: 50%;
+    top: 75%;
+    display: flex;
+    box-shadow: 5px 10px 30px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+}
+.search>input{
+    padding: 20px 30px;
+    border: none;
+    font-weight: 700;
+}
+.btn-search{
+    background: #97c680;
+    border: none;;
+    padding: 25px 20px;
+    font-size: 25px;
+}
+.show-lift{
+    color: white;
+    width: 37%;
+    font-size: 1.8rem;
+    padding: 20px;
+    letter-spacing: 1px;
+    background-color: #1e1e2f;
+    position: absolute;
+    bottom: 2rem;
+    visibility:visible;
+    transition: visibility 0.2s ease-in-out;
+}
+.item:hover .show-lift{
+    visibility: hidden;
+}
+.span-rotate{
+  transform: rotate(-90deg);
+  margin-bottom: 2rem;
+  text-shadow: 2px 2px 4px #000000;
+}
+.show-more{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 2rem;
+    gap: 50px;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 700;
+    visibility: hidden;
+    transition: visibility 0.2s 0.2s ease-in-out;
+}
+.item:hover .show-more{
+    visibility: visible;
+}
+ /* .background-shadow{
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    height: 200px;
+    width: 100%;
+    box-shadow: -1px -10px 40px rgba(0, 0, 0, 0.8) inset;
+     backdrop-filter: blur( 32px );
+    -webkit-backdrop-filter: blur( 32px ); 
+}  */
+.link{
+    position: relative;
+    cursor: pointer;
+}
+.link::after{
+    content: "";
+   position: absolute;
+   width: 100%;
+   border-width: 2px;
+   border-style: solid;
+   border-color: black;
+   top: 110%;
+   left: 0;
+    transform: scale(0);
+    transform-origin: center;
+    transition: transform 0.2s ease-in-out;
+    
+
+}
+.link:hover::after{
+    transform: scale(1);
+}
+
+.down{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    gap: 40px;
+}
+.big-letter{
+    letter-spacing: 1px;
+}
+.list-service{
+    color: #aaa5a8;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+.list-service>li{
+    position: relative;
+}
+.active{
+    color: black;
+    font-weight: 700;
+}
+.active::after{
+    content: "";
+    position: absolute;
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+    top: 120%;
+    left: 0;
+    width: 100%;
+}
